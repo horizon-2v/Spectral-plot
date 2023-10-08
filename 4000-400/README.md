@@ -3,6 +3,6 @@
 run matlab in cmd:
 ```
 cd .\4000-400
-matlab -nosplash -nodesktop -r er_ji_jie_gou
+matlab -nosplash -nodesktop -r ni_he
 ```
 直接在matlab里打开也可
