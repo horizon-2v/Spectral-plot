@@ -2,7 +2,7 @@ close all;
 clear;
 clc;
 
-dataDir = "D:\code\workspace\spectral_plot\画图数据\红外";
+dataDir = "D:\code\workspace\spectral_plot\画图数据\红外\LZ";
 
 data = flip(readmatrix(fullfile(dataDir, "OMINC冷榨1红外谱图.csv")));
 cold_wavenum = data(:,1);
