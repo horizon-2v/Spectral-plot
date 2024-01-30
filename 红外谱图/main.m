@@ -3,24 +3,33 @@ clear;
 clc;
 
 dir_path = "D:\code\workspace\spectral_plot\画图数据\红外";
-select_dir = ["INU", "PIM", "PPI", "PPI-INU", "UPIM", "UPPI-INU"];
-% select_dir = ["PPI"];
+select_dir = ["PPI", "UPPI-INU", "PIM"];
 
 for data_dir = select_dir
     [plot_x, plot_y] = data_fit(fullfile(dir_path, data_dir));
     if data_dir == "CG"
         plot_y = plot_y * 2.59;
     end
+    if dir_path ~= "D:\code\workspace\spectral_plot\画图数据\红外"
+        for i = 1:5
+            plot_y = smooth(plot_y);
+        end
+    end
     plot(plot_x, plot_y,'linewidth',1.75);
     hold on
 end
 hold off
 
-set(gca,'XDir','reverse','Box','off','TickDir','out')
-legend(select_dir, 'FontName', '宋体', 'Box', 'off')
+set(gca,'Box','off','TickDir','out')
+
+if dir_path == "D:\code\workspace\spectral_plot\画图数据\红外"
+    set(gca,'XDir','reverse')
+end
+
+legend(select_dir, 'FontName', 'Times New Roman', 'Box', 'off')
 xlabel('Wavenumbers (cm^-^1)');
 ylabel('Absorbance');
-xlim([400 4000])
+% xlim([240 500])
 % ylim([-0.1 1])
 set(gca,'fontsize',20,'FontName','Times New Roman','TickDir','out','box','off','linewidth',1.75)
 
