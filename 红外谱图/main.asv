@@ -28,7 +28,7 @@ end
 
 legend(select_dir, 'FontName', 'Times New Roman', 'Box', 'off')
 xlabel('Wavelength (nm)');
-ylabel('Flourescence intensity');
+ylabel('Flourescence intensi');
 xlim([300 400])
 % ylim([-0.1 1])
 set(gca,'fontsize',20,'FontName','Times New Roman','TickDir','out','box','off','linewidth',1.75)
